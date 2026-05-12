@@ -1,0 +1,36 @@
+MODEL: seedance-2-0 (audio-video sync, ~9 credits) OR kling-3-0 (no audio, ~6 credits)
+DURATION: 5 seconds
+ASPECT_RATIO: 16:9 (web) or 9:16 (reel) or 1:1 (feed)
+DEFAULT_NEGATIVE: stuttering motion, frozen frame, watermark
+
+PROMPT:
+Subject: {{SUBJECT}}
+Action: {{ACTION}}
+Camera: {{CAMERA_MOVE}}
+Duration: 5 seconds
+Style: {{STYLE}}
+Mood: {{MOOD}}
+Audio: {{AUDIO_DIRECTION}} (Seedance 2.0 only; omit for Kling)
+
+NOTES:
+- Use camera-move verbs: push, pull, pan, tilt, dolly, crane.
+- One scene per prompt. Multi-scene briefs go to Veo 3.1 or Sora 2.
+- Specify the duration in the prompt and in the parameter.
+
+EXAMPLE (FloodPulse dashboard transition):
+Subject: a Houston neighborhood aerial seamlessly transitioning into the FloodPulse flood-risk dashboard
+Action: the aerial fades and the dashboard rises into frame with risk markers pulsing
+Camera: slow push-in from above, then tilt down to dashboard close-up
+Duration: 5 seconds
+Style: smooth cinematic, atmospheric
+Mood: confident, technical
+Audio: subtle rising synth tone with soft impact at the dashboard reveal
+
+EXAMPLE (DrapeStudio saree reveal):
+Subject: a folded emerald silk saree on a marble surface
+Action: a hand enters frame and slowly unfolds the saree, revealing the gold border
+Camera: top-down medium shot, slight crane up at the end
+Duration: 5 seconds
+Style: editorial product film, soft natural light
+Mood: warm anticipation
+Audio: soft fabric rustle, light ambient music

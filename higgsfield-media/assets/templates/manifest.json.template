@@ -1,0 +1,16 @@
+{
+  "project_slug": "{{PROJECT_SLUG}}",
+  "brief": "{{BRIEF}}",
+  "started_at": "{{STARTED_AT}}",
+  "balance_before": 0,
+  "balance_after": 0,
+  "characters": {},
+  "generations": [],
+  "pending_jobs": [],
+  "totals": {
+    "image_count": 0,
+    "video_count": 0,
+    "credits_spent": 0,
+    "credits_free_pool_used": 0
+  }
+}

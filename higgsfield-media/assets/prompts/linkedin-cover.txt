@@ -1,0 +1,27 @@
+MODEL: nano-banana-pro
+ASPECT_RATIO: 1128x191
+RESOLUTION: 4K
+DEFAULT_NEGATIVE: cluttered background, gradient noise, photo grain, watermark, low resolution
+
+PROMPT:
+Subject: {{BRAND_OR_SUBJECT}}
+Camera: straight-on, banner crop 1128x191, wide-angle feel
+Lighting: low-key studio with rim light from the right
+Style: {{STYLE}}
+Composition: {{COMPOSITION}}
+Color palette: {{PALETTE}}
+Text on image: {{TEXT_ON_IMAGE}}
+
+NOTES:
+- Banner crop is extreme. Lead with negative space, place the focal element off-center.
+- Nano Banana Pro renders text crisply; specify exactly which copy must appear and which must not.
+- For a series of three variants, change the composition descriptor each time, not the subject.
+
+EXAMPLE (AiGNITE Consulting):
+Subject: AiGNITE green and red yin-yang motif on dark navy
+Camera: straight-on, banner crop 1128x191
+Lighting: low-key, rim light from the right at 30 degrees
+Style: premium technology branding, calm and confident
+Composition: motif centered with generous negative space on both sides
+Color palette: deep navy #0B1220 background, brand green #4ADE80, brand red #F87171
+Text on image: none

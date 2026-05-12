@@ -1,0 +1,35 @@
+{
+  "skill_name": "higgsfield-media",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Generate three LinkedIn cover images for AiGNITE Consulting, 1128x191, dark background with the green and red yin-yang motif, three different compositional variations using Nano Banana Pro.",
+      "expected_output": "Three downloaded PNG files in output/YYYY-MM-DD/aignite-linkedin-cover/images/, manifest.json with three completed entries totaling around 6 credits, and a balance ledger update.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create a 5-second product motion clip for FloodPulse showing the dashboard flood risk map fading into a Houston neighborhood aerial. Use Seedance 2.0, 16:9 ratio. Then write a video-config.yaml for remotion-video so I can wrap it with TTS.",
+      "expected_output": "One MP4 in output/YYYY-MM-DD/floodpulse-demo/videos/ at around 9 credits, manifest.json with the clip entry, and a video-config.yaml referencing the clip plus a placeholder narration line for remotion-video to consume.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Build a six-asset social pack for the RegPulse March release: two square hero images at 4K, two 9:16 short clips at 5 seconds, and two 16:9 banner stills. Keep the visual identity consistent and pick the right model for each. Show me the credit cost before generating.",
+      "expected_output": "A cost line printed before generation listing each model and total credits. Six assets in the project folder organized by type. manifest.json totals matching the cost line. Refusal to proceed without explicit yes if the total exceeds 100 credits.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Train a Soul Character from these three reference photos for my Cosmic Nexus spokesperson, then generate four 5-second UGC clips of her explaining Vedic compatibility. Use Seedance 2.0 with lip-sync.",
+      "expected_output": "One character training pass writes the character_id to manifest.characters. Four UGC clips reference the same character_id and land in output/YYYY-MM-DD/cosmic-nexus-ugc/videos/. Credit ledger reflects training plus four generation costs.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "I have 87 credits left for the month. Generate as many product hero shots for DrapeStudio as that budget allows on Nano Banana Pro, with white seamless background and three-quarter angle. Stop at the budget cap.",
+      "expected_output": "The skill reads balance, computes credits/unit at ~2 for Nano Banana Pro, calculates safe batch size (preserving 20-credit floor), generates the batch, and stops when continuing would push balance below 20. manifest.json records every generation and the final balance.",
+      "files": []
+    }
+  ]
+}

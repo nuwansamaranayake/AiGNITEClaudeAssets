@@ -30,7 +30,8 @@ $skills = @(
   "design-from-mockup",
   "three-tier-test",
   "app-store-submission",
-  "mcp-to-mobile"
+  "mcp-to-mobile",
+  "higgsfield-media"
 )
 
 Write-Host "--- AiGNITE Mobile Skills installer ---"

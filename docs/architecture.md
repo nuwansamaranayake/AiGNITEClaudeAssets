@@ -119,9 +119,20 @@ my-app/
 └── .gitignore
 ```
 
+## Where higgsfield-media fits
+
+`higgsfield-media` joined the suite at v0.2.0 as a horizontal capability rather than a step in the eight-skill pipeline. It serves any phase that needs visual assets:
+
+- During `mobile-app-scaffold` and `app-store-submission`: generates marketing screenshots and hero images for App Store Connect.
+- During product launch: generates LinkedIn covers, blog heroes, social pack assets, and UGC clips.
+- During `remotion-video` composition: produces the raw clips and stills that Remotion layers into final videos. The handoff is a generated `video-config.yaml` that the Remotion skill consumes.
+- During pitch deck construction (`pptx` and `docx`): generates architecture backdrops and concept illustrations.
+
+The skill never assembles video, never picks colors for the brand system (the user's `lib/theme.ts` is authoritative), and never falls back to another provider without explicit consent. It owns the model selection and credit budget for any Higgsfield job.
+
 ## Extension points
 
-A ninth skill fits the suite if it:
+A tenth skill fits the suite if it:
 
 1. Writes its outputs to a known file path.
 2. Reads inputs from known file paths.

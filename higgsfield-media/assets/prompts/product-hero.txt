@@ -1,0 +1,36 @@
+MODEL: nano-banana-pro (if packaging copy must render) OR gpt-image-2 (if product plus person) OR soul-v2 (if editorial lifestyle)
+ASPECT_RATIO: 1:1 or 4:5
+RESOLUTION: 4K
+DEFAULT_NEGATIVE: cluttered background, plastic skin, oversaturated, watermark
+
+PROMPT:
+Subject: {{PRODUCT}}
+Setting: {{SETTING}}
+Camera: {{ANGLE}}, {{LENS}}
+Lighting: {{LIGHTING}}
+Style: {{STYLE}}
+Composition: {{COMPOSITION}}
+Brand cue: {{BRAND_CUE}}
+
+NOTES:
+- For copy on the packaging, pick Nano Banana Pro. For a product worn or held by a person, pick GPT Image 2. For editorial lifestyle (Sri Lankan e-commerce), pick Soul V2.
+- Square 1:1 works for grid placement. 4:5 works for portrait feed posts.
+- Specify the exact camera angle (three-quarter, top-down, eye-level) and lens (35mm, 50mm, 85mm).
+
+EXAMPLE (DrapeStudio saree on a model):
+Subject: thirty-year-old Sri Lankan woman in a deep emerald silk saree with gold border, holding the pallu in her left hand
+Setting: cream stucco wall in Galle Fort, late afternoon golden hour
+Camera: three-quarter front angle, 85mm prime, shallow depth of field
+Lighting: warm side light from camera left, soft shadow on the wall
+Style: editorial fashion photography, Vogue India aesthetic
+Composition: subject occupies right two-thirds of frame, negative space on left for copy overlay
+Brand cue: subtle DrapeStudio logo on the corner of the pallu
+
+EXAMPLE (FloodPulse on a tablet):
+Subject: hands of a Houston resident holding a 10-inch tablet showing the FloodPulse flood-risk dashboard
+Setting: kitchen counter with morning coffee, soft window light
+Camera: top-down 45-degree angle, 35mm
+Lighting: diffused window light from camera left
+Style: photorealistic product mockup, candid feel
+Composition: tablet centered, coffee mug bottom-right, edge of newspaper top-left
+Brand cue: dashboard shows the FloodPulse logo and a Houston flood-risk map

@@ -16,6 +16,7 @@ Built by Nuwan Samaranayake at AiGNITE Consulting LLC. Used in production to shi
 | 6 | three-tier-test         | Chrome to mirror to physical device. Each tier must pass before the next runs. |
 | 7 | app-store-submission    | Generates privacy policy, screenshots, metadata, reviewer credentials. Runs EAS submit. |
 | 8 | mcp-to-mobile           | Flagship pipeline. Takes any AiGNITE MCP server URL and produces a full consumer mobile app with subscriptions and push notifications. |
+| 9 | higgsfield-media        | Wraps the Higgsfield MCP server (Soul V2, Nano Banana Pro, Flux 2 Pro, Kling 3.0, Seedance 2.0, Veo 3.1, Sora 2 and more) into a disciplined image and video generation pipeline. Picks the right model per brief, tracks credit cost, hands off to remotion-video for assembly. |
 
 ## Who this is for
 
@@ -77,7 +78,7 @@ The full avoid list and rationale are in `docs/skill-development.md`.
 
 ## Status
 
-Version 0.1.0. Built 2026-05-12.
+Version 0.2.0. Built 2026-05-12.
 
 ## License
 

@@ -1,0 +1,36 @@
+MODEL: seedream-4-5 (high resolution, unlimited on Plus) OR flux-2-pro (more stylized)
+ASPECT_RATIO: 16:9
+RESOLUTION: 1080p on Plus (4K on Ultra)
+DEFAULT_NEGATIVE: cluttered, busy details, text artifacts, watermark, people, screens with content
+
+PROMPT:
+Subject: {{ARCHITECTURE_SUBJECT}}
+Setting: {{SETTING}}
+Lighting: {{LIGHTING}}
+Camera: {{CAMERA}}
+Composition: {{COMPOSITION}}
+Detail level: clean, no people, no readable text on screens
+Resolution: ultra-high resolution
+
+NOTES:
+- Specify "no people" if the diagram needs an empty backdrop.
+- Specify "no readable text" if you plan to overlay your own labels in Keynote, PPTX, or Remotion.
+- Lighting precision matters more than other models. Name the source, color temperature, and direction.
+
+EXAMPLE (data center backdrop for an AiGNITE pitch deck):
+Subject: a clean modern server rack hallway with cable management
+Setting: data center floor, polished concrete, no people present
+Lighting: cool blue overhead LED at 5500K, soft floor reflections, no harsh shadows
+Camera: 35mm wide-angle, hallway perspective with slight one-point convergence
+Composition: hallway recedes into the center frame, generous headroom for diagram labels
+Detail level: visible cable trays, no readable text on equipment, no logos
+Resolution: ultra-high resolution
+
+EXAMPLE (three-tier MCP architecture backdrop):
+Subject: an abstract three-layer architectural composition rendered as glass platforms stacked vertically
+Setting: dark indigo space with soft volumetric light from above
+Lighting: layered key light from top, secondary fills in cyan and emerald
+Camera: slight low angle, 50mm, shallow depth on the lowest layer
+Composition: three distinct horizontal bands occupying lower, middle, upper thirds, generous negative space on the right for labels
+Detail level: minimalist, no text, no people, no logos
+Resolution: ultra-high resolution

@@ -1,0 +1,32 @@
+MODEL: sora-2 (physics, object permanence, 40 to 70 credits) OR veo-3-1 (narrative beats, 40 to 70 credits)
+DURATION: 15 seconds
+ASPECT_RATIO: 16:9 or 9:16
+DEFAULT_NEGATIVE: glitchy motion, object teleport, broken physics, watermark
+
+PROMPT:
+A {{SUBJECT}} {{VERB_WITH_PHYSICAL_INTERACTION}}.
+Camera: {{CAMERA_DIRECTION}}.
+Environment: {{ENVIRONMENTAL_DETAIL}}.
+The {{OBJECT}} {{PHYSICS_RESPONSE}}.
+Audio: {{AUDIO_DIRECTION}}.
+
+NOTES:
+- Name the physical interaction explicitly (falls, shatters, refracts, deforms, levitates).
+- Slow motion cues help the model commit to physics resolution.
+- 15 seconds is a hard cap on Sora 2 for the typical user tier.
+- Confirm the cost with the operator before submitting; over 40 credits per generation requires explicit yes.
+
+EXAMPLE (Cosmic Nexus 15-second ad):
+A glass bottle containing a swirling galaxy falls from a wooden table in slow motion.
+Camera: rises with the bottle, pulls back into a wide shot of a sunlit room with floor-to-ceiling windows.
+Environment: a Mumbai apartment at golden hour, dust motes in the light.
+The bottle shatters on the wood floor, glass shards arcing outward.
+The galaxy inside reforms midair as a Vedic mandala, then settles slowly onto the broken glass.
+Audio: a tabla rhythm builds under a low drone, peaks at the shatter, softens as the mandala forms.
+
+EXAMPLE (FloodPulse 15-second narrative):
+A Houston resident steps onto a porch as rain falls heavily on the street.
+Camera: tracks the resident from behind, then crane up to reveal flooding water moving along the curb.
+Environment: a residential neighborhood at dawn, gray sky, wet asphalt.
+The phone in the resident's hand lights up with a FloodPulse alert, glowing softly.
+Audio: rain hitting the porch, a soft notification chime, then a calm narrator voice begins.

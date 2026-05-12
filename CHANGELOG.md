@@ -4,6 +4,23 @@ All notable changes to the AiGNITE Mobile Development Skills Suite go here.
 
 The format follows Keep a Changelog. Versioning follows Semantic Versioning.
 
+## [0.2.0] - 2026-05-12
+
+Added `higgsfield-media` skill.
+
+### Added
+
+- `higgsfield-media` skill. Wraps the Higgsfield MCP server into a brief-driven image and video pipeline. Picks the right model (Soul V2, Nano Banana Pro, Flux 2 Pro, GPT Image 2, Seedream 4.5, Seedream 5.0 Lite, Kling O1 Image, Kling 3.0, Seedance 2.0, Wan 2.6, Hailuo 02, Veo 3.1, Sora 2). Confirms credit cost before generating. Tracks every generation in a per-project `manifest.json` and a global `credit-ledger.csv`. Hands off to `remotion-video` for clip assembly.
+- Seven reference files (model-selection, credit-costs, marketing-studio-presets, prompting-cookbook, soul-character-workflow, remotion-handoff, troubleshooting).
+- Seven prompt templates (LinkedIn cover, product hero, blog hero, 5-second ad clip, 15-second cinematic, UGC talking head, architecture backdrop).
+- Three asset templates (manifest.json, credit-ledger.csv, video-config-from-higgsfield.yaml).
+- Five scripts (check-mcp, check-balance, smoke-test, poll-job, batch-generate).
+- Repo-level README, CHANGELOG, INSTALL.ps1, and `docs/architecture.md` updated to include the ninth skill.
+
+### Engineering standards extension
+
+Standard 6 added for this skill: confirm with the user before any single generation over 40 credits or any batch over 100 credits. Maintain a project manifest and a global credit ledger.
+
 ## [0.1.0] - 2026-05-12
 
 Initial release.

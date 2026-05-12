@@ -1,0 +1,38 @@
+MODEL: seedance-2-0 (with lip-sync, single-pass audio, ~9 credits)
+DURATION: 5 to 12 seconds typical
+ASPECT_RATIO: 9:16 (vertical) or 1:1
+DEFAULT_NEGATIVE: robotic delivery, off-sync lips, stiff posture, watermark
+
+PROMPT:
+A {{CHARACTER_DESCRIPTION}} says: "{{SPOKEN_LINE}}".
+Setting: {{SETTING}}.
+Mood: {{MOOD}}.
+Camera: {{CAMERA_TYPE}}.
+Wardrobe: {{WARDROBE}}.
+
+NOTES:
+- Quote the spoken line verbatim. Use natural punctuation.
+- Keep the line under 12 seconds of spoken content for a 5-second clip.
+- For multi-shot series with the same person, train a Soul Character first and use the character_id.
+- Mood and camera at the end tune the delivery.
+
+EXAMPLE (Cosmic Nexus UGC, single shot):
+A thirty-five-year-old woman with warm features and shoulder-length dark hair says:
+"I checked my Vedic chart this morning and the career section actually matched what happened today at work."
+Setting: a sunlit home office with a brass elephant figurine on the desk.
+Mood: genuine surprise tipping into delight.
+Camera: handheld smartphone feel, three-quarter angle, eye-level.
+Wardrobe: cream linen shirt, simple gold earrings.
+
+EXAMPLE (FloodPulse UGC, single shot):
+A Houston father in his forties with a neat beard says:
+"I got the alert before the water reached our porch. Bought us forty minutes."
+Setting: standing on a covered porch, light rain visible behind him.
+Mood: calm and grateful.
+Camera: handheld, slight tilt, medium close-up.
+Wardrobe: navy work shirt, no logo.
+
+CHARACTER REUSE:
+For a series with the same character, run create_character once with 3 reference photos, then call:
+generate_video(model="seedance-2-0", character_id="<id>", prompt="...").
+See references/soul-character-workflow.md.

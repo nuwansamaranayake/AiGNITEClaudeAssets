@@ -1,0 +1,33 @@
+MODEL: flux-2-pro (preferred for illustration) OR seedream-5-0-lite (for concept-heavy) OR cinema-studio (for editorial photography)
+ASPECT_RATIO: 16:9
+RESOLUTION: up to 4K depending on model
+DEFAULT_NEGATIVE: cluttered background, low resolution, watermark, generic stock photo feel
+
+PROMPT:
+Style: {{STYLE_DESCRIPTOR}}
+Subject: {{SUBJECT}}
+Key visual element: {{KEY_VISUAL}}
+Color palette: {{PALETTE}}
+Composition: {{COMPOSITION}}
+Mood: {{MOOD}}
+
+NOTES:
+- Lead with the style descriptor. Flux 2 Pro weights the first phrase heavily.
+- Three style adjectives is plenty.
+- For a series, reuse the style block verbatim across prompts.
+
+EXAMPLE (AEO insight page on query intent):
+Style: flat vector illustration, isometric, gradient mesh
+Subject: a single beam of light entering a glass prism and splitting into colored beams labeled with AI engine names (ChatGPT, Claude, Perplexity, Gemini)
+Key visual element: glowing knowledge graph nodes connected to each beam
+Color palette: indigo, emerald, soft cream background
+Composition: prism centered, beams fanning to the right, labels in clean sans-serif
+Mood: clarity and curiosity
+
+EXAMPLE (FloodPulse blog post on flood prediction):
+Style: editorial illustration, soft gradient mesh, atmospheric
+Subject: a satellite view of Houston with flowing water overlays predicting flood paths
+Key visual element: three glowing risk markers placed at high-risk intersections
+Color palette: navy base, cyan water flow, amber risk markers
+Composition: aerial top-down, central focus on downtown, generous bleed at edges
+Mood: calm vigilance
