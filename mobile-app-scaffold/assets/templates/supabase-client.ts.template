@@ -1,0 +1,66 @@
+import 'react-native-url-polyfill/auto';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL ?? '';
+const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error(
+    'Supabase env vars missing. Copy .env.local.example to .env.local and fill it.'
+  );
+}
+
+export const supabase: SupabaseClient = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    storage: AsyncStorage,
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: false,
+  },
+});
+
+// RLS-aware helpers. These assume the row owner is the authenticated user and
+// the table has a `user_id` column with an RLS policy enforcing ownership.
+
+export async function listOwn<T>(table: string): Promise<T[]> {
+  const { data, error } = await supabase.from(table).select('*');
+  if (error) throw error;
+  return (data ?? []) as T[];
+}
+
+export async function insertOwn<T extends Record<string, unknown>>(
+  table: string,
+  row: T
+): Promise<T> {
+  const { data: userData } = await supabase.auth.getUser();
+  const userId = userData.user?.id;
+  if (!userId) throw new Error('No authenticated user');
+  const { data, error } = await supabase
+    .from(table)
+    .insert({ ...row, user_id: userId })
+    .select()
+    .single();
+  if (error) throw error;
+  return data as T;
+}
+
+export async function updateOwn<T extends Record<string, unknown>>(
+  table: string,
+  id: string,
+  patch: Partial<T>
+): Promise<T> {
+  const { data, error } = await supabase
+    .from(table)
+    .update(patch)
+    .eq('id', id)
+    .select()
+    .single();
+  if (error) throw error;
+  return data as T;
+}
+
+export async function deleteOwn(table: string, id: string): Promise<void> {
+  const { error } = await supabase.from(table).delete().eq('id', id);
+  if (error) throw error;
+}

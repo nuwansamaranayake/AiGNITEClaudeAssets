@@ -1,0 +1,23 @@
+{
+  "skill_name": "design-from-mockup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Design my FloodPulse mobile app to look like the Calm app onboarding",
+      "expected_output": "Skill asks for the existing FloodPulse project path. Fetches or generates a Calm-style mockup. Extracts tokens (calm light palette, generous spacing, soft radii). Extracts assets one at a time. Runs the screenshot loop until the diff is below moderate threshold.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Match this Dribbble mockup for my habit tracker",
+      "expected_output": "Skill asks for the local image path or URL to the Dribbble mockup. Validates the asset extraction pipeline rejects grid generation. Outputs theme tokens, extracted assets, and an iteration log under design/.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Generate a high-end design for a Vedic astrology compatibility app",
+      "expected_output": "Skill recognizes the input as a text prompt rather than a reference image. Calls gemini-imagegen for four mockup variations. User picks one. Skill proceeds with asset extraction and the screenshot loop.",
+      "files": []
+    }
+  ]
+}

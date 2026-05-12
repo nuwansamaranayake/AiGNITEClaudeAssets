@@ -1,0 +1,23 @@
+{
+  "skill_name": "mobile-app-scaffold",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Scaffold a mobile app called FloodPulse Mobile with bundle ID com.aignite.floodpulse",
+      "expected_output": "A complete Expo project tree at a slugified subdirectory with app.json, eas.json, CLAUDE.md, Makefile, lib/supabase.ts, services/mcp-client.ts, scripts/smoke-test.sh, and the standard AiGNITE folder layout. verify-scaffold.ps1 exits zero.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Start a new React Native project that talks to my Beacon GoM MCP server",
+      "expected_output": "Skill asks for the app name and bundle ID if not provided, then scaffolds with MCP_SERVER_URL set to the Beacon GoM endpoint. mcp-client.ts has the URL baked in.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Build me a mobile app boilerplate for tracking compliance",
+      "expected_output": "Skill prompts for app name (suggests 'Compliance Tracker' or similar) and bundle ID, then produces the standard scaffold. CLAUDE.md at the project root includes the five non-negotiable rules.",
+      "files": []
+    }
+  ]
+}

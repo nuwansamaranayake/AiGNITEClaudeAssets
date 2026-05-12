@@ -1,0 +1,73 @@
+# Tier 3 Manual Checklist for {{PROJECT_NAME}}
+
+Tick each item as you run it on the physical device. Type `tier3:PASS` once every item passes. Any single failure means the build is not ready.
+
+## Push notifications
+
+- [ ] Foreground notification fires the in-app handler.
+- [ ] Background notification appears in tray.
+- [ ] Tapping a background notification opens the correct screen.
+- [ ] Tapping a notification after force-quit cold-starts to the correct screen.
+
+## Camera and microphone
+
+- [ ] Camera permission prompt appears on first use.
+- [ ] Denied permission shows a friendly fallback.
+- [ ] Captured images are the expected resolution.
+- [ ] Microphone permission prompt appears on first use.
+- [ ] Audio recording replays clearly.
+
+## Location
+
+- [ ] Location permission prompt appears.
+- [ ] Location accuracy is within fifty meters of true position.
+- [ ] Location resolves on cell-only.
+
+## Biometric authentication
+
+- [ ] Face ID or Touch ID prompt appears.
+- [ ] Cancel falls back to passcode.
+- [ ] Successful auth loads the protected screen.
+
+## Deep links
+
+- [ ] Deep link from email opens the target screen.
+- [ ] Deep link from SMS opens the target screen.
+- [ ] Deep link cold-start works.
+
+## Network resilience
+
+- [ ] Airplane mode produces a clear error, not a crash.
+- [ ] Reconnecting and retrying works.
+- [ ] Wi-Fi to cell handoff is clean.
+
+## Performance
+
+- [ ] Cold start under three seconds.
+- [ ] Long list scrolls smoothly.
+- [ ] Battery saver mode does not break the app.
+
+## Display
+
+- [ ] Orientation lock holds.
+- [ ] Dark Mode follows system preference (if intended).
+- [ ] Dynamic Type extra-large does not clip text.
+
+## Privacy
+
+- [ ] Screenshot blocking enforced on protected screens (if intended).
+- [ ] App switcher blurs sensitive screens (if intended).
+
+## Installation
+
+- [ ] App icon present on home screen.
+- [ ] Icon matches assets/icon.png.
+- [ ] Launch screen matches assets/splash.png.
+
+## Final
+
+- [ ] Tester signs off below.
+
+Tester: __________
+Date:   __________
+Result: tier3:PASS or tier3:FAIL with failed items listed.

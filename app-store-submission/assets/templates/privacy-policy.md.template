@@ -1,0 +1,52 @@
+# Privacy Policy: {{PROJECT_NAME}}
+
+Last updated: {{LAST_UPDATED_DATE}}
+
+## Who we are
+
+This app is operated by {{CONTROLLER_ENTITY}}. For privacy questions, contact {{CONTACT_EMAIL}}.
+
+## What we collect
+
+{{DATA_COLLECTION_TABLE}}
+
+## How we use the data
+
+- To run the app's core function for you.
+- To send transactional emails and push notifications you requested.
+- To diagnose crashes and improve reliability.
+- We do not sell or rent your data.
+- We do not use your data for advertising.
+
+## Who we share with
+
+We use the following processors to operate the service. Each is bound by a data processing agreement.
+
+- Supabase (database and authentication)
+- Stripe (subscription billing, only if you upgrade)
+- Resend (transactional email, sent from contact.aigniteconsulting.ai)
+- Expo Push Service plus Apple Push Notification service and Firebase Cloud Messaging (push notifications)
+
+We share the minimum data each processor needs to perform its function.
+
+## Your rights
+
+- Access: email {{CONTACT_EMAIL}} for an export of your data.
+- Deletion: open Settings in the app and tap "Delete account". Your data is purged within thirty days.
+- Portability: the export is delivered as JSON.
+- Correction: edit your profile in the app, or email us for fields not editable in-app.
+
+## Children
+
+This app is not intended for users under thirteen. We do not knowingly collect data from children. If you believe a child has used the app, contact {{CONTACT_EMAIL}} and we will purge their data.
+
+## Changes
+
+We update this policy when we add or remove a data type, change a processor, or change retention periods. The "Last updated" date at the top reflects the most recent change. Material changes are communicated in-app.
+
+## Contact
+
+For all privacy and data requests:
+
+{{CONTROLLER_ENTITY}}
+Email: {{CONTACT_EMAIL}}

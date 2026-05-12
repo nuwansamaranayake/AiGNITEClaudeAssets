@@ -1,0 +1,23 @@
+SYSTEM: Generate a single asset for an AiGNITE mobile app.
+
+SUBJECT: {{SUBJECT}}
+
+STYLE BLOCK (must apply verbatim):
+{{STYLE_BLOCK}}
+
+OUTPUT CONSTRAINTS:
+- One subject only
+- Transparent background (alpha = 0 in all four corners)
+- No padding around the subject
+- Subject centered in the frame
+- Square aspect ratio, 1024x1024
+- Vector-quality lines (no JPEG-like blur)
+- No text, no watermark, no border
+
+FORBIDDEN:
+- Grid of multiple subjects
+- Background fills of any color
+- Drop shadows that extend past the canvas edge
+- Decorative borders
+
+This asset will be composited into a React Native screen at runtime. Background bleed or padding will cause visible artifacts at the edge.

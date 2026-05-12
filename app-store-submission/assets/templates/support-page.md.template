@@ -1,0 +1,31 @@
+# Support: {{PROJECT_NAME}}
+
+For help with {{PROJECT_NAME}}, choose the option below that fits your question.
+
+## Frequently asked questions
+
+### How do I reset my password?
+
+Open the app, tap Sign In, then tap "Forgot password". You will receive an email from contact.aigniteconsulting.ai with a reset link. The link expires after one hour.
+
+### How do I delete my account?
+
+Open Settings in the app, then tap "Delete account". Your data is purged within thirty days. Active subscriptions are cancelled at the end of the current billing period.
+
+### How do I cancel my subscription?
+
+Cancel through the App Store or Google Play subscription settings on your device. The subscription stays active until the end of the current period.
+
+### Why are push notifications not working?
+
+Open iOS Settings or Android Settings, find {{PROJECT_NAME}}, and confirm notification permission is granted. In the app, open Settings and confirm your topic subscriptions are correct.
+
+## Contact us
+
+For questions not covered above, email {{SUPPORT_EMAIL}}. We reply within two business days.
+
+For privacy and data deletion requests, see the [Privacy Policy](./privacy.html).
+
+## Status
+
+If the app is not working and you suspect a service outage, check {{STATUS_URL}}.

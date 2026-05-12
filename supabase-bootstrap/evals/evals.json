@@ -1,0 +1,23 @@
+{
+  "skill_name": "supabase-bootstrap",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add a database to my FloodPulse mobile app with tables for alerts, subscriptions, and user preferences",
+      "expected_output": "Skill asks for region, generates schema with three user tables plus profiles and subscriptions, applies migration, verifies table count, writes API_CONTRACT.md and updates .env.local. RLS enabled on every user-owned table.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Set up Supabase auth for this project",
+      "expected_output": "Skill walks through project init, auth provider selection, and writes the env vars. Email confirmation disabled in dev profile, enabled in production profile.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Wire up the database for a habit tracker with five tables",
+      "expected_output": "Skill renders the habit-tracker schema pattern (profiles, habits, completions, streak_freezes plus subscriptions = 5 tables), applies the migration, and aborts if the post-migration count is not 5.",
+      "files": []
+    }
+  ]
+}

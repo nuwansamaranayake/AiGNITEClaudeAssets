@@ -1,0 +1,23 @@
+{
+  "skill_name": "mcp-to-mobile",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Turn FloodPulse into a mobile app for Houston residents",
+      "expected_output": "Skill resolves the floodpulse shortcut, discovers tools, filters to the three public flood tools, scaffolds the project, generates three screens, wires push notifications for flood:harris-county topic, sets up Stripe at $4.99/month, runs supabase-bootstrap, security-audit, three-tier-test, and offers app-store-submission.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Build a consumer app from RegScope for compliance officers",
+      "expected_output": "Skill resolves regscope, discovers three public tools, scaffolds a compliance-tracking mobile app, wires push notifications for reg:<agency> topics, Stripe at $14.99/month. Refuses to expose any admin or write tools.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Wrap my Cosmic Nexus MCP as a Vedic compatibility app for the App Store",
+      "expected_output": "Skill resolves cosmic-nexus, discovers 11 public reading tools, filters out admin tools (alert_admin, list_users, etc), scaffolds the app, generates eleven tool screens, wires ready-notification flow, Stripe at $19.99/month. Final step offers app-store-submission.",
+      "files": []
+    }
+  ]
+}

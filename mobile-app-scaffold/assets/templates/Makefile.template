@@ -1,0 +1,22 @@
+.PHONY: check up smoke install clean
+
+# Run typecheck, lint, format check. Fails on any error.
+check:
+	npx tsc --noEmit
+	npx eslint . --max-warnings=0
+	npx prettier --check .
+
+# Start the Expo dev server.
+up:
+	npx expo start
+
+# Real-endpoint smoke test. Fails if any business endpoint is broken.
+smoke:
+	@if [ ! -f .env.local ]; then echo ".env.local missing. Copy from .env.local.example and fill it."; exit 1; fi
+	bash scripts/smoke-test.sh
+
+install:
+	npm install
+
+clean:
+	rm -rf node_modules dist .expo

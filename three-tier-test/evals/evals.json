@@ -1,0 +1,23 @@
+{
+  "skill_name": "three-tier-test",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Run the three-tier test on my Cal Tracker app",
+      "expected_output": "Skill runs tier 1 (Playwright over Expo web), then tier 2 (Maestro flow on simulator), then tier 3 (manual checklist on physical device). Writes each result to TEST_RESULTS.md. Refuses to mark the build READY unless all three tiers pass within the last 72 hours.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Verify my FloodPulse mobile build before I submit",
+      "expected_output": "Skill enforces the tier sequence. Refuses to proceed to tier 2 if tier 1 fails. Refuses to proceed to tier 3 if tier 2 fails. Final status written to TEST_RESULTS.md with timestamps.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Is the pomodoro app ready to ship",
+      "expected_output": "Skill reads TEST_RESULTS.md. Confirms all three tiers passed within 72 hours. If yes, prints READY with the valid-until date. If no, lists the failing or stale tier and refuses.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "mvp-design-framework",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to build a water intake tracker",
+      "expected_output": "Skill triggers and asks question 1 verbatim. Refuses multi-function answers. Continues through questions 2-5 in order. Writes MVP_SPEC.md to the working directory with all five fields filled. Total screens at or below seven.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Help me scope a mobile app for tracking my Texas highway construction bids",
+      "expected_output": "Skill asks the five questions verbatim. Rejects 'push notifications' as the retention hook answer and forces the user to name an unfinished state. Outputs MVP_SPEC.md.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Design an app that turns RegScope alerts into a phone notification",
+      "expected_output": "Skill recognizes the user is describing a delivery channel, not a function. Asks question 1 to surface what the app actually does (e.g. 'lists pending regulatory changes affecting the user's industries'). Proceeds through the five questions and writes MVP_SPEC.md.",
+      "files": []
+    }
+  ]
+}

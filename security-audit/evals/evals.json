@@ -1,0 +1,23 @@
+{
+  "skill_name": "security-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Run a security audit on my FloodPulse mobile app",
+      "expected_output": "Skill runs pass 1, produces SECURITY_AUDIT.md at the project root with findings classified Critical/High/Medium/Low. Each finding cites a CWE. If any Critical or High findings exist, skill enters pass 2 to apply fixes, then pass 3 to verify no new issues were introduced.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Is this safe to ship to TestFlight",
+      "expected_output": "Skill runs the audit and prints a GREEN/RED verdict. RED if any Critical or High remains. The verdict prints with a list of remaining items. GREEN includes the valid-until date seven days out.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Check this project for vulnerabilities before I push to Apple",
+      "expected_output": "Skill runs the full three-pass audit. Refuses to print a clean verdict unless pass 3 added zero new Critical or High findings. Output saved to SECURITY_AUDIT.md.",
+      "files": []
+    }
+  ]
+}

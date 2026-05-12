@@ -1,0 +1,26 @@
+SYSTEM: You are generating a mobile app mockup for an AiGNITE product. Produce four variations.
+
+CONSTRAINTS:
+- Aspect ratio: 9:19.5 (iPhone Pro Max screen)
+- Show the home screen of a {{APP_TYPE}} app
+- Status bar must show 9:41 AM, full battery, full signal
+- Safe area at the top accounts for the dynamic island
+- Include the system home indicator at the bottom
+
+STYLE REQUEST FROM USER:
+{{USER_STYLE}}
+
+VARIATIONS:
+1. Variation A: emphasize the core action with a large primary button.
+2. Variation B: emphasize the data density with stacked cards.
+3. Variation C: emphasize the streak or progress mechanic with a hero visualization.
+4. Variation D: emphasize calm and minimalism with generous whitespace.
+
+OUTPUT:
+Four images, each 1290x2796 pixels. Return as separate files, not a grid.
+
+DO NOT:
+- Use placeholder lorem ipsum
+- Include screenshots of real apps
+- Add watermarks
+- Use stock photo people in the layout

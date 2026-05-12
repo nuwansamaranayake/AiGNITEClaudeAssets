@@ -1,0 +1,49 @@
+project: "{{PROJECT_NAME}}"
+bundle_id: "{{BUNDLE_ID}}"
+controller: "{{CONTROLLER_ENTITY}}"
+
+ios:
+  name: "{{IOS_NAME}}"                # 30 chars
+  subtitle: "{{IOS_SUBTITLE}}"        # 30 chars
+  promotional_text: "{{PROMO_TEXT}}"  # 170 chars
+  description: |                       # 4000 chars
+    {{DESCRIPTION}}
+  keywords: "{{KEYWORDS}}"            # 100 chars comma-separated
+  primary_category: "{{IOS_CATEGORY_PRIMARY}}"
+  secondary_category: "{{IOS_CATEGORY_SECONDARY}}"
+  age_rating: "{{AGE_RATING}}"        # 4+, 9+, 12+, 17+
+  copyright: "© 2026 {{CONTROLLER_ENTITY}}"
+  support_url: "https://contact.aigniteconsulting.ai/support/{{SLUG}}.html"
+  marketing_url: "{{MARKETING_URL}}"
+  privacy_url: "https://contact.aigniteconsulting.ai/privacy/{{SLUG}}.html"
+
+android:
+  name: "{{ANDROID_NAME}}"            # 50 chars
+  short_description: "{{SHORT_DESC}}" # 80 chars
+  full_description: |                  # 4000 chars
+    {{DESCRIPTION}}
+  category: "{{ANDROID_CATEGORY}}"
+  tags: ["{{TAG1}}", "{{TAG2}}", "{{TAG3}}"]
+  default_language: "en-US"
+  contact_email: "{{CONTACT_EMAIL}}"
+  privacy_url: "https://contact.aigniteconsulting.ai/privacy/{{SLUG}}.html"
+
+review:
+  reviewer_email: "{{REVIEWER_EMAIL}}"
+  reviewer_password: "{{REVIEWER_PASSWORD}}"
+  reviewer_notes: |
+    {{REVIEWER_NOTES}}
+
+screenshots:
+  ios:
+    - size: "6.7"
+      path: "store/screenshots/ios/6.7"
+    - size: "6.5"
+      path: "store/screenshots/ios/6.5"
+    - size: "5.5"
+      path: "store/screenshots/ios/5.5"
+  android:
+    - size: "phone"
+      path: "store/screenshots/android/phone"
+    - size: "tablet-7"
+      path: "store/screenshots/android/tablet-7"

@@ -1,0 +1,23 @@
+{
+  "skill_name": "app-store-submission",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Submit my Cal Tracker app to TestFlight",
+      "expected_output": "Skill refuses if TEST_RESULTS.md is stale or SECURITY_AUDIT.md is not GREEN. Otherwise renders the privacy policy, publishes to contact.aigniteconsulting.ai, captures screenshots, fills metadata, creates a Supabase reviewer user, runs eas build + eas submit for iOS, prints the App Store Connect deep link.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Publish FloodPulse to the App Store",
+      "expected_output": "Skill runs the full pipeline for iOS production submission. Confirms the privacy URL is reachable. Confirms the support URL is reachable. Refuses if either is missing.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Push the pomodoro app to Google Play",
+      "expected_output": "Skill runs the Android pipeline targeting Internal Track by default. Generates Android screenshot sizes. Fills the Data Safety form. Confirms target SDK is 35 or higher.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Claude Code session machinery
+.claude/
+.planning/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor state
+.vscode/
+.idea/
+*.swp
+
+# Dependency dirs (not used in this repo today, but defensive)
+node_modules/
+dist/
