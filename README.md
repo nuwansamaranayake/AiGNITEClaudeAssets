@@ -78,7 +78,7 @@ The full avoid list and rationale are in `docs/skill-development.md`.
 
 ## Status
 
-Version 0.2.0. Built 2026-05-12.
+Version 0.2.1. Built 2026-05-12. Higgsfield MCP smoke-tested live.
 
 ## License
 

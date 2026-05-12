@@ -4,6 +4,21 @@ All notable changes to the AiGNITE Mobile Development Skills Suite go here.
 
 The format follows Keep a Changelog. Versioning follows Semantic Versioning.
 
+## [0.2.1] - 2026-05-12
+
+Smoke test passed. Live API contract verified and documented.
+
+### Added
+
+- `higgsfield-media/references/api-contract.md`. Records the verified tool names, parameter shapes, model IDs, and response schemas from the live MCP at `https://mcp.higgsfield.ai/mcp`. Last verified 2026-05-12.
+- Linked the new reference from the skill's References section.
+
+### Verified
+
+- 17 tools live on the hosted MCP. Tool names differ from the original spec in several places (e.g. `balance` not `get_credit_balance`, `show_characters` not `list_characters`). The skill is anchored on the verified names.
+- `generate_image` accepts `params.get_cost: true` for inline cost preflight, removing the need for a separate balance-tool call before generating.
+- End-to-end pipeline: OAuth, workspace selection, model recommendation, cost preflight, generation (Flux 2 Pro, 1 credit), download, PNG validation, manifest write, credit ledger append. All green.
+
 ## [0.2.0] - 2026-05-12
 
 Added `higgsfield-media` skill.

@@ -154,6 +154,7 @@ Every project gets its own folder under `output/YYYY-MM-DD/PROJECT-SLUG/`. `mani
 
 ## References
 
+- [references/api-contract.md](references/api-contract.md) - verified MCP tool names and parameter shapes, with last-verified date.
 - [references/model-selection.md](references/model-selection.md) - full decision matrix with worked examples.
 - [references/credit-costs.md](references/credit-costs.md) - current credit prices, last-verified date.
 - [references/marketing-studio-presets.md](references/marketing-studio-presets.md) - the canned modes.
