@@ -1,93 +1,109 @@
-# AiGNITE Mobile Development Skills Suite
+# AiGNITE Claude Skills
 
-Eight Claude Code skills that turn a solo founder into a one-person mobile app studio. Each skill is a discipline. Together they take an idea from "what should this be" to "submitted to the App Store" without the operator writing a line of boilerplate.
+A collection of production-grade Claude Code skills. Each one encodes a discipline that turns a creative brief, a vague idea, or a routine task into reliable, shippable work without the operator writing boilerplate.
 
-Built by Nuwan Samaranayake at AiGNITE Consulting LLC. Used in production to ship one new mobile product every two weeks.
+Built and maintained by Nuwan Samaranayake at AiGNITE Consulting LLC. Used in production. Open-sourced under MIT for anyone running Claude Code.
 
-## What is in the suite
+## Why use these skills
 
-| Order | Skill | What it does |
-|------:|-------|--------------|
-| 1 | mobile-app-scaffold     | Generates a production-ready Expo project pre-wired for AiGNITE conventions in under sixty seconds. |
-| 2 | mvp-design-framework    | Forces the five-question MVP discipline before any code gets written. |
-| 3 | supabase-bootstrap      | Stands up Supabase with RLS on by default, verifies table count, generates the API contract. |
-| 4 | security-audit          | Three-pass audit (identify, fix, regression check) before any submission. |
-| 5 | design-from-mockup      | Takes a reference image or text prompt and produces a pixel-close mobile UI through a screenshot diff loop. |
-| 6 | three-tier-test         | Chrome to mirror to physical device. Each tier must pass before the next runs. |
-| 7 | app-store-submission    | Generates privacy policy, screenshots, metadata, reviewer credentials. Runs EAS submit. |
-| 8 | mcp-to-mobile           | Flagship pipeline. Takes any AiGNITE MCP server URL and produces a full consumer mobile app with subscriptions and push notifications. |
-| 9 | higgsfield-media        | Wraps the Higgsfield MCP server (Soul V2, Nano Banana Pro, Flux 2 Pro, Kling 3.0, Seedance 2.0, Veo 3.1, Sora 2 and more) into a disciplined image and video generation pipeline. Picks the right model per brief, tracks credit cost, hands off to remotion-video for assembly. |
+Claude Code is powerful out of the box. These skills add three things on top:
 
-## Who this is for
+1. **Discipline.** Every skill enforces hard rules. No silent fallbacks. No mock data in production. Verify before assuming.
+2. **Composition.** Skills hand off to each other through file artifacts (`MVP_SPEC.md`, `API_CONTRACT.md`, `manifest.json`). You can swap one without breaking the others.
+3. **Real prompts.** Each skill ships with at least three substantive trigger phrases that match how operators actually talk.
 
-- Solo founders shipping mobile apps.
-- AiGNITE Consulting operators wrapping MCP infrastructure into B2C products.
-- Teams using Claude Code who need discipline without ceremony.
+## Skill catalog
 
-## How the skills compose
+### Mobile Development
 
-The skills depend on each other. A new project follows the order in the table. The `mcp-to-mobile` skill orchestrates the other seven into a single command.
+Eight skills that take a mobile app from idea to App Store submission. Designed for solo founders shipping consumer apps on Expo plus Supabase. Compose into the `mcp-to-mobile` flagship pipeline.
 
-See [docs/architecture.md](docs/architecture.md) for the dependency graph.
+| Skill | What it does |
+|-------|--------------|
+| [mvp-design-framework](mvp-design-framework/) | Forces five-question MVP discipline before any code gets written. |
+| [mobile-app-scaffold](mobile-app-scaffold/) | Generates a production-ready Expo project pre-wired for AiGNITE conventions in under sixty seconds. |
+| [supabase-bootstrap](supabase-bootstrap/) | Stands up Supabase with RLS on by default, verifies table count, generates the API contract. |
+| [design-from-mockup](design-from-mockup/) | Takes a reference image or text prompt and produces a pixel-close mobile UI through a screenshot diff loop. |
+| [security-audit](security-audit/) | Three-pass audit (identify, fix, regression check) before any submission. |
+| [three-tier-test](three-tier-test/) | Chrome to mirror to physical device. Each tier must pass before the next runs. |
+| [app-store-submission](app-store-submission/) | Generates privacy policy, screenshots, metadata, reviewer credentials. Runs EAS submit. |
+| [mcp-to-mobile](mcp-to-mobile/) | Flagship pipeline. Takes any MCP server URL and produces a full consumer mobile app with subscriptions and push notifications. |
+
+See [docs/architecture.md](docs/architecture.md) for the dependency graph and build order.
+
+### Media Generation
+
+| Skill | What it does |
+|-------|--------------|
+| [higgsfield-media](higgsfield-media/) | Wraps the Higgsfield MCP server (30 plus models including Soul V2, Nano Banana Pro, Flux 2 Pro, Kling 3.0, Seedance 2.0, Veo 3.1, Sora 2). Brief in plain language, get the right model picked, credit cost confirmed, asset downloaded, manifest written. [User's guide here.](higgsfield-media/USERGUIDE.md) |
+
+### More categories coming
+
+The suite is structured to host future skill families. Engineering ops, content generation, research workflows, finance, devops all fit the same pattern: pushy description, hard rules, file-based handoff, MIT license.
 
 ## Installation
 
-### Option A: install everything
+### Install everything at once
 
 ```powershell
+git clone https://github.com/nuwansamaranayake/AiGNITEClaudeAssets.git
+cd AiGNITEClaudeAssets
 .\INSTALL.ps1
 ```
 
-The script copies every skill into `%USERPROFILE%\.claude\skills`. Existing skill folders are replaced.
+The script copies every skill into `%USERPROFILE%\.claude\skills`. Existing folders are replaced.
 
-### Option B: install one skill
+### Install a single skill
 
 ```powershell
+git clone https://github.com/nuwansamaranayake/AiGNITEClaudeAssets.git
+cd AiGNITEClaudeAssets
 Copy-Item -Recurse "skill-name" -Destination "$env:USERPROFILE\.claude\skills\skill-name" -Force
 ```
 
-### Option C: update
+### Update later
 
 ```powershell
 .\UPDATE.ps1
 ```
 
-Pulls the latest from this repo and re-installs.
+Pulls latest from `main` and re-installs.
 
 ## Engineering standards
 
-These are non-negotiable. Every skill enforces them.
+Every skill enforces these. Non-negotiable.
 
 1. Root-cause fixes only. Curl the failing endpoint, query the database, read the logs before any fix.
 2. Smoke tests verify real business endpoints, not health checks.
 3. No silent mock data fallbacks outside development.
 4. Verify table count after every database migration.
 5. Maintain an API contract document.
+6. Confirm with the user before any cost commitment over the configured threshold.
 
 See [docs/skill-development.md](docs/skill-development.md) for the full writing style guide and the standards reproduced in each skill.
 
 ## Writing style
 
-The skills produce output users read. Every user-facing string follows these rules:
+The skills produce output users read. Every user-facing string follows:
 
 - Clear simple language. Short sentences. Active voice.
 - No em dashes. No semicolons in prose.
 - No metaphors or cliches.
 
-The full avoid list and rationale are in `docs/skill-development.md`.
+Full avoid list in `docs/skill-development.md`.
 
 ## Status
 
-Version 0.2.1. Built 2026-05-12. Higgsfield MCP smoke-tested live.
+Version 0.3.0. Built 2026-05-12. Higgsfield MCP smoke-tested live.
 
 ## License
 
-See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
 
 ## Contributing
 
-Adding a ninth skill? See [docs/skill-development.md](docs/skill-development.md) for the standards.
+Adding a tenth skill (or a new category)? See [docs/skill-development.md](docs/skill-development.md). PRs welcome.
 
 ## Acknowledgements
 
-Built by Claude Code (Anthropic) under direction from Nuwan Samaranayake. The discipline of each skill reflects lessons paid for in real AiGNITE post-mortems, listed in the references within each skill.
+Built by Claude Code (Anthropic) under direction from Nuwan Samaranayake. The discipline of each skill reflects lessons paid for in real post-mortems, listed in the references within each skill.

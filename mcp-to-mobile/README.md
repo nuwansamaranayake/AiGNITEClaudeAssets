@@ -1,6 +1,6 @@
 # mcp-to-mobile
 
-The flagship of the AiGNITE Mobile Development Skills Suite.
+The flagship of the AiGNITE Claude Skills.
 
 ## What it does
 

@@ -1,6 +1,6 @@
 # Skill Development Guide
 
-One-line summary: How to add a ninth skill to the AiGNITE Mobile Development Skills Suite without breaking the discipline of the first eight.
+One-line summary: How to add a ninth skill to the AiGNITE Claude Skills without breaking the discipline of the first eight.
 
 ## Anatomy of a skill
 

@@ -2,7 +2,7 @@
 
 Generate professional images and videos through the Higgsfield MCP server, driven by Claude Code. Picks the right model for the brief, tracks credit cost, downloads outputs to a structured folder, and hands off to downstream skills for video assembly or document embedding.
 
-Part of the AiGNITE Mobile Development Skills Suite. Built to ship on its own to any Higgsfield Plus subscriber who uses Claude Code.
+Part of the AiGNITE Claude Skills. Built to ship on its own to any Higgsfield Plus subscriber who uses Claude Code.
 
 ## What this skill does
 
@@ -53,6 +53,10 @@ claude mcp list
 ```
 
 Expect `higgsfield: Connected`.
+
+## Full user's guide
+
+For an end-to-end walkthrough (first generation, common workflows, character training, Remotion handoff, credit budget management, troubleshooting), read **[USERGUIDE.md](USERGUIDE.md)**.
 
 ## Usage examples
 
@@ -151,7 +155,7 @@ MIT. See [LICENSE](../LICENSE) in the repository root.
 
 ## Related skills
 
-This skill is part of the AiGNITE Mobile Development Skills Suite. See the [repository README](../README.md) for the full suite.
+This skill is part of the AiGNITE Claude Skills. See the [repository README](../README.md) for the full suite.
 
 Hands off cleanly to:
 

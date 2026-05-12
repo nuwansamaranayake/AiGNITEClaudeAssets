@@ -1,8 +1,10 @@
 # Architecture
 
-One-line summary: How the eight AiGNITE Mobile Development Skills compose, the dependency graph, and the reasoning behind the build order.
+One-line summary: How skills in the AiGNITE Claude Skills suite compose, the dependency graph for the Mobile Development family, and where horizontal skills like `higgsfield-media` slot in.
 
-## Dependency graph
+The suite groups skills by category. The Mobile Development category is the most mature and has a strict build order. Other categories (Media Generation, future families) provide horizontal capabilities used by any category. Future categories like engineering ops, content generation, or research workflows fit the same pattern.
+
+## Dependency graph (Mobile Development category)
 
 ```
 mvp-design-framework

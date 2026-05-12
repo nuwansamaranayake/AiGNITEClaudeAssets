@@ -1,6 +1,6 @@
 # design-from-mockup
 
-Part of the AiGNITE Mobile Development Skills Suite.
+Part of the AiGNITE Claude Skills.
 
 ## What it does
 

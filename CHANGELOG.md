@@ -1,8 +1,26 @@
 # Changelog
 
-All notable changes to the AiGNITE Mobile Development Skills Suite go here.
+All notable changes to the AiGNITE Claude Skills go here.
 
 The format follows Keep a Changelog. Versioning follows Semantic Versioning.
+
+## [0.3.0] - 2026-05-12
+
+Rebrand and restructure. The collection is now generic enough to host multiple skill families, not only mobile development.
+
+### Changed
+
+- Suite renamed from "AiGNITE Mobile Development Skills Suite" to "AiGNITE Claude Skills" across every README, doc, and skill reference.
+- Top-level `README.md` reorganized around categories. Current categories: Mobile Development (8 skills) and Media Generation (1 skill). Future categories slot in without restructuring.
+- `docs/architecture.md` updated to describe Mobile Development as one category among several, with horizontal skills like `higgsfield-media` slotting in across categories.
+
+### Added
+
+- `higgsfield-media/USERGUIDE.md`. Comprehensive end-to-end walkthrough: prerequisites, install, OAuth, first generation, common workflows (LinkedIn cover, product hero, blog hero, motion clips, cinematic ads, UGC, architecture backdrops), multiple-variant batches, Soul Character training, Remotion handoff, credit budget management, output organization, troubleshooting, and tips.
+
+### Migration notes
+
+No breaking changes. Skill names, frontmatter, file paths, and APIs are unchanged. The rebrand is documentation-only.
 
 ## [0.2.1] - 2026-05-12
 
