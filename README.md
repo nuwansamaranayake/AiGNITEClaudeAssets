@@ -37,6 +37,12 @@ See [docs/architecture.md](docs/architecture.md) for the dependency graph and bu
 |-------|--------------|
 | [higgsfield-media](higgsfield-media/) | Wraps the Higgsfield MCP server (30 plus models including Soul V2, Nano Banana Pro, Flux 2 Pro, Kling 3.0, Seedance 2.0, Veo 3.1, Sora 2). Brief in plain language, get the right model picked, credit cost confirmed, asset downloaded, manifest written. [User's guide here.](higgsfield-media/USERGUIDE.md) |
 
+### VPS Operations
+
+| Skill | What it does |
+|-------|--------------|
+| [hermes-vps-deploy](hermes-vps-deploy/) | Deploys [Hermes Agent](https://hermes-agent.nousresearch.com) from Nous Research to any Linux VPS that already runs Docker plus Traefik. Discovers the existing Traefik network and cert resolver, generates a 32-char bcrypt basic-auth password, brings up one container running `gateway run` with the dashboard backgrounded via `HERMES_DASHBOARD=1`, validates with a strict TLS chain check (no `-k` flag), and writes audit, credentials, and lessons files on the VPS. Five minutes from a clean Hostinger box to a working WebUI behind Let's Encrypt. Optional follow-on extensions (Telegram pairing, MCP wiring including the undocumented SSE transport workaround, Gmail monitoring via himalaya cron) covered in `references/follow-on-extensions.md`. |
+
 ### More categories coming
 
 The suite is structured to host future skill families. Engineering ops, content generation, research workflows, finance, devops all fit the same pattern: pushy description, hard rules, file-based handoff, MIT license.
@@ -94,7 +100,7 @@ Full avoid list in `docs/skill-development.md`.
 
 ## Status
 
-Version 0.3.0. Built 2026-05-12. Higgsfield MCP smoke-tested live.
+Version 0.4.0. Built 2026-05-24. Hermes VPS deploy smoke-tested on a live Hostinger KVM 4 (srv453405) with Ubuntu 22.04 plus Docker 29.5 plus Traefik 2.11. All five smoke tests passed first try.
 
 ## License
 

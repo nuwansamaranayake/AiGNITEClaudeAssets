@@ -1,0 +1,64 @@
+# Hermes Agent — production compose template.
+# Render via the skill's Phase 3 (or assets/install.sh). All <PLACEHOLDERS> get
+# substituted with discovered/provided values.
+#
+# Design: ONE container running `gateway run`. Dashboard backgrounded inside
+# the same container via HERMES_DASHBOARD=1 (per official docs — splitting
+# into two containers breaks gateway-liveness detection).
+#
+# Gateway API on :8642 is NOT published (would need API_SERVER_ENABLED=true
+# in .env; out of scope for a pure WebUI install). Traefik routes only to
+# the dashboard on :9119.
+
+services:
+  hermes:
+    image: nousresearch/hermes-agent:latest
+    container_name: hermes
+    restart: unless-stopped
+    command: gateway run
+    env_file:
+      - <DATA_DIR>/.env
+    environment:
+      - HERMES_DASHBOARD=1
+      - HERMES_DASHBOARD_HOST=0.0.0.0
+      - HERMES_DASHBOARD_PORT=9119
+      # Optional: expose the in-browser chat tab in the dashboard
+      # - HERMES_DASHBOARD_TUI=1
+    volumes:
+      - <DATA_DIR>:/opt/data
+    networks:
+      - <TRAEFIK_NETWORK>
+    deploy:
+      resources:
+        limits:
+          memory: <MEMORY_LIMIT>
+          cpus: "<CPU_LIMIT>"
+    healthcheck:
+      # Dashboard side-process is NOT supervised by Hermes; if it dies, this
+      # healthcheck triggers container restart, recovering it. start_period
+      # must be >= 60s — entrypoint runs ~10s of skill-sync and the dashboard
+      # web build takes ~30s on first boot.
+      test: ["CMD-SHELL", "curl -fsS http://localhost:9119/ -o /dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 90s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=<TRAEFIK_NETWORK>"
+      - "traefik.http.routers.hermes.rule=Host(`<HERMES_SUBDOMAIN>`)"
+      - "traefik.http.routers.hermes.entrypoints=websecure"
+      - "traefik.http.routers.hermes.tls=true"
+      - "traefik.http.routers.hermes.tls.certresolver=<CERT_RESOLVER_NAME>"
+      - "traefik.http.routers.hermes.middlewares=hermes-auth@docker"
+      # IMPORTANT: <HTPASSWD_HASH_ESCAPED> must have all $ doubled to $$ so
+      # compose interpolation passes the literal $ through. After `up`, verify
+      # with `docker inspect hermes --format '{{index .Config.Labels "traefik.http.middlewares.hermes-auth.basicauth.users"}}'`
+      # — you should see SINGLE $ characters in the bcrypt hash.
+      - "traefik.http.middlewares.hermes-auth.basicauth.users=<HTPASSWD_HASH_ESCAPED>"
+      - "traefik.http.services.hermes.loadbalancer.server.port=9119"
+      - "traefik.http.routers.hermes.service=hermes"
+
+networks:
+  <TRAEFIK_NETWORK>:
+    external: true

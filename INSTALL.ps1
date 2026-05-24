@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Installs all eight AiGNITE Mobile Development Skills into the user-level Claude Code skills directory.
+  Installs all AiGNITE Claude Skills into the user-level Claude Code skills directory.
 .DESCRIPTION
   Copies each skill folder to %USERPROFILE%\.claude\skills, replacing any existing installation.
 .PARAMETER DryRun
@@ -31,10 +31,11 @@ $skills = @(
   "three-tier-test",
   "app-store-submission",
   "mcp-to-mobile",
-  "higgsfield-media"
+  "higgsfield-media",
+  "hermes-vps-deploy"
 )
 
-Write-Host "--- AiGNITE Mobile Skills installer ---"
+Write-Host "--- AiGNITE Claude Skills installer ---"
 Write-Host "Source: $repoRoot"
 Write-Host "Target: $targetRoot"
 Write-Host ""
@@ -73,5 +74,6 @@ if ($missing.Count -gt 0) {
 
 Write-Host ""
 Write-Host "Open a new Claude Code session to pick up the installed skills."
-Write-Host "Verify by typing: 'Build a mobile app called Test with bundle id com.test.x'"
+Write-Host "Verify a mobile skill: 'Build a mobile app called Test with bundle id com.test.x'"
+Write-Host "Verify the ops skill:  'Deploy Hermes Agent to my VPS at hermes.example.com via ssh alias myhost'"
 exit 0

@@ -4,6 +4,28 @@ All notable changes to the AiGNITE Claude Skills go here.
 
 The format follows Keep a Changelog. Versioning follows Semantic Versioning.
 
+## [0.4.0] - 2026-05-24
+
+First skill in the new VPS Operations category. Built from a real install on a Hostinger KVM 4 box; every surprise captured in the lessons file.
+
+### Added
+
+- `hermes-vps-deploy` skill. Stands up [Hermes Agent](https://hermes-agent.nousresearch.com) (Nous Research) on any Linux VPS that already runs Docker plus Traefik. Discovers the existing Traefik network and cert resolver via `docker inspect` rather than hardcoding. Generates a 32-char random Traefik basic-auth password, bcrypts it, and bakes the hash into a Traefik label with correct `$$` compose escaping. Brings up ONE container running `hermes gateway run` with `HERMES_DASHBOARD=1` so the dashboard runs as a side-process in the same PID namespace (per the official Hermes docs; splitting into two containers BREAKS the dashboard liveness probe). Runs strict smoke tests with no `-k` curl flag: external DNS, TLS chain verification with depth check, 401 challenge from Traefik, 200 from the dashboard with creds, cert subject and dates.
+- `hermes-vps-deploy/assets/install.sh` unattended end-to-end installer for non-Claude operators. Reads inputs from environment variables (`SSH_ALIAS`, `HERMES_SUBDOMAIN`, `TRAEFIK_BASIC_AUTH_USER`, `CONTAINER_CPU_LIMIT`, `CONTAINER_MEMORY_LIMIT`). Idempotent: skips already-done steps on re-run.
+- `hermes-vps-deploy/assets/docker-compose.template.yml` with placeholders for the network, cert resolver, subdomain, htpasswd hash, and resource limits.
+- `hermes-vps-deploy/references/lessons.md` documenting 14 numbered lessons paid for in the reference deploy. Topics: one-container design, no native dashboard password, gateway subcommand is for messaging not HTTP, default model goes in config.yaml not .env, skill-sync prelude needs `start_period >= 60s`, the in-image compose file is dashboard-only, compose `$$` doubling for bcrypt hashes (with the `docker compose config` display artifact gotcha), `docker exec -u hermes` requirement for state-writing subcommands, Traefik discover-don't-assume pattern, exact env var names that are correct as-is, failure modes the strict smoke tests catch, Hostinger snapshot via MCP API, and things prepared for that didn't happen.
+- `hermes-vps-deploy/references/follow-on-extensions.md` covering Anthropic OAuth via Claude subscription (dashboard + CLI flows), Telegram pairing (with the `docker exec -u hermes` fix for the pairing-file ownership bug), MCP server wiring including the undocumented `transport: sse` workaround for SSE-only MCPs, and Gmail monitoring via the bundled himalaya CLI on a `--no-agent` cron in silent-when-empty mode.
+- New top-level category in the README: "VPS Operations". The architecture in `docs/architecture.md` already anticipated horizontal categories so no restructuring needed.
+- `INSTALL.ps1` updated to install the new skill. Synopsis revised from "eight Mobile Development Skills" to "all AiGNITE Claude Skills" to match the broader scope.
+
+### Engineering standards extension
+
+Standard 7 added for VPS deploys: every deploy that touches Traefik or DNS must include a strict smoke test phase that verifies TLS chain depth `>=2` and `Verification: OK` without `-k`. This catches the leaf-only cert chain failure mode that `curl -k` masks.
+
+### Migration notes
+
+No breaking changes. Existing skills, frontmatter, and APIs are unchanged. The new skill is additive and does not interact with the Mobile Development pipeline.
+
 ## [0.3.0] - 2026-05-12
 
 Rebrand and restructure. The collection is now generic enough to host multiple skill families, not only mobile development.
