@@ -1,0 +1,43 @@
+{
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "-6%",
+  "pitch": "-2Hz",
+  "shots": [
+    {
+      "id": "s01_birth",
+      "text": "Everything around you is made of tiny particles. Sometimes, two of them are born together, in a single flash of light."
+    },
+    {
+      "id": "s02_pair",
+      "text": "These two are now entangled. Think of each one as having a color, blue or gold. In real labs, this is a property like spin. But right now, neither particle has a color yet. Each one is an undecided mix of both."
+    },
+    {
+      "id": "s03_apart",
+      "text": "Now we send them far apart. One meter. Across the Earth. Across the galaxy. The link between them does not fade."
+    },
+    {
+      "id": "s04_measure",
+      "text": "Now someone measures the first particle. It turns blue, purely by chance. And at that very same instant, its partner, far across space, turns gold. Always the opposite color."
+    },
+    {
+      "id": "s05_repeat",
+      "text": "Repeat this with new pairs, again and again. On each side alone, the colors look as random as coin flips. But compare the two lists, and every pair is opposite. Every single time."
+    },
+    {
+      "id": "s06_boxes",
+      "text": "Is this like hiding a blue ball and a gold ball in two boxes? No. In boxes, the colors are set from the start. Careful experiments showed that entangled particles carry no hidden answer. That work won the 2022 Nobel Prize in Physics."
+    },
+    {
+      "id": "s07_nosignal",
+      "text": "So, can we use this to send messages faster than light? No. Each person only sees random colors. The pattern appears only when they compare notes, and those notes travel no faster than light."
+    },
+    {
+      "id": "s08_real",
+      "text": "And this is real. In 2017, a satellite sent entangled particles of light to two ground stations, twelve hundred kilometers apart. Today, entanglement drives research in quantum computers and ultra secure communication."
+    },
+    {
+      "id": "s09_outro",
+      "text": "Two particles. Far apart. Still acting as one. That is quantum entanglement."
+    }
+  ]
+}
