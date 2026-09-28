@@ -1,0 +1,202 @@
+{
+ "fps": 24,
+ "total_frames": 3124,
+ "shots": {
+  "s01_birth": {
+   "start": 0,
+   "frames": 268
+  },
+  "s02_pair": {
+   "start": 268,
+   "frames": 379
+  },
+  "s03_apart": {
+   "start": 647,
+   "frames": 227
+  },
+  "s04_measure": {
+   "start": 874,
+   "frames": 365
+  },
+  "s05_repeat": {
+   "start": 1239,
+   "frames": 357
+  },
+  "s06_boxes": {
+   "start": 1596,
+   "frames": 459
+  },
+  "s07_nosignal": {
+   "start": 2055,
+   "frames": 378
+  },
+  "s08_real": {
+   "start": 2433,
+   "frames": 447
+  },
+  "s09_outro": {
+   "start": 2880,
+   "frames": 244
+  }
+ },
+ "s01": {
+  "t_in": 6.476,
+  "t_born": 7.226
+ },
+ "s02": {
+  "entangled": 1.238,
+  "blue": 4.31,
+  "gold": 4.908,
+  "spin": 7.966,
+  "neither": 10.201,
+  "undecided": 13.286
+ },
+ "s03": {
+  "cut_ab": 3.05,
+  "cut_bc": 4.5,
+  "a_from": 0.0,
+  "b_from": 2.85,
+  "c_from": 4.3,
+  "apart": 1.231,
+  "meter": 2.335,
+  "earth": 3.757,
+  "galaxy": 5.194,
+  "link": 6.337
+ },
+ "s04": {
+  "T_C": 4.077,
+  "R0": 7.0,
+  "R1": 11.9,
+  "S0": 2.777,
+  "S1": 4.377,
+  "replay_collapse": 10.981250000000001,
+  "measures": 1.471,
+  "gold": 11.604,
+  "always": 12.441,
+  "chance": 5.473
+ },
+ "s05": {
+  "trials": [
+   {
+    "t": 0.95,
+    "left": "B",
+    "right": "G"
+   },
+   {
+    "t": 1.8,
+    "left": "G",
+    "right": "B"
+   },
+   {
+    "t": 2.5,
+    "left": "G",
+    "right": "B"
+   },
+   {
+    "t": 3.05,
+    "left": "B",
+    "right": "G"
+   },
+   {
+    "t": 3.55,
+    "left": "G",
+    "right": "B"
+   },
+   {
+    "t": 4.0,
+    "left": "B",
+    "right": "G"
+   },
+   {
+    "t": 4.4,
+    "left": "B",
+    "right": "G"
+   },
+   {
+    "t": 4.8,
+    "left": "G",
+    "right": "B"
+   },
+   {
+    "t": 5.2,
+    "left": "B",
+    "right": "G"
+   },
+   {
+    "t": 5.6,
+    "left": "G",
+    "right": "B"
+   }
+  ],
+  "each": 4.203,
+  "random": 6.278,
+  "flips": 7.581,
+  "compare": 8.764,
+  "every": 10.892,
+  "opposite": 11.677,
+  "every2": 12.674
+ },
+ "s06": {
+  "blue": 1.484,
+  "gold": 2.468,
+  "no": 4.636,
+  "set": 7.136,
+  "start": 7.734,
+  "entangled": 10.832,
+  "hidden": 12.867,
+  "nobel": 16.112,
+  "that": 14.144
+ },
+ "s07": {
+  "messages": 2.381,
+  "no": 4.203,
+  "each": 4.948,
+  "random": 6.544,
+  "pattern": 8.033,
+  "compare": 9.855,
+  "notes": 11.73,
+  "travel": 12.129,
+  "light": 14.097,
+  "send_t": 9.655000000000001,
+  "arrive_t": 14.15
+ },
+ "s08": {
+  "real": 0.992,
+  "year": 1.87,
+  "satellite": 3.785,
+  "sent": 4.596,
+  "two": 7.096,
+  "kilometers": 9.609,
+  "today": 10.979,
+  "computers": 14.516,
+  "secure": 16.125,
+  "arrivals": [
+   5.346,
+   6.096,
+   6.846,
+   7.596,
+   8.346,
+   9.096,
+   9.846,
+   10.596,
+   11.346,
+   12.096,
+   12.846,
+   13.596,
+   14.346,
+   15.096,
+   15.846,
+   16.596,
+   17.346,
+   18.096
+  ]
+ },
+ "s09": {
+  "beats": [
+   2.987,
+   3.735
+  ],
+  "that": 4.469,
+  "entanglement": 5.121
+ }
+}

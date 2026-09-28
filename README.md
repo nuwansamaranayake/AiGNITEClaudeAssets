@@ -43,6 +43,12 @@ See [docs/architecture.md](docs/architecture.md) for the dependency graph and bu
 |-------|--------------|
 | [hermes-vps-deploy](hermes-vps-deploy/) | Deploys [Hermes Agent](https://hermes-agent.nousresearch.com) from Nous Research to any Linux VPS that already runs Docker plus Traefik. Discovers the existing Traefik network and cert resolver, generates a 32-char bcrypt basic-auth password, brings up one container running `gateway run` with the dashboard backgrounded via `HERMES_DASHBOARD=1`, validates with a strict TLS chain check (no `-k` flag), and writes audit, credentials, and lessons files on the VPS. Five minutes from a clean Hostinger box to a working WebUI behind Let's Encrypt. Optional follow-on extensions (Telegram pairing, MCP wiring including the undocumented SSE transport workaround, Gmail monitoring via himalaya cron) covered in `references/follow-on-extensions.md`. |
 
+### Showcase
+
+| Project | What it is |
+|---------|------------|
+| [quantum-entanglement-film](showcase/quantum-entanglement-film/) | A 130-second narrated film that explains quantum entanglement to complete beginners. Path-traced 3D (Blender Cycles), film finishing, original score and sound design, assembled with the `remotion-video` pipeline. Fully reproducible with one PowerShell script. |
+
 ### More categories coming
 
 The suite is structured to host future skill families. Engineering ops, content generation, research workflows, finance, devops all fit the same pattern: pushy description, hard rules, file-based handoff, MIT license.
