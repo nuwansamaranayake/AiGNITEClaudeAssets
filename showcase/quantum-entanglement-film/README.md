@@ -2,6 +2,10 @@
 
 A 130-second, 1080p24 narrated film that explains quantum entanglement to someone with no physics background. Every shot is path-traced 3D (Blender Cycles), finished with a film look, then assembled with narration, captions, labels, an original score and sound design in Remotion.
 
+## Watch
+
+[quantum-entanglement.mp4](quantum-entanglement.mp4) (1080p24, H.264, AAC, about 77 MB). GitHub cannot play a file this size inline, so use the download button on that page.
+
 ## What the viewer learns, shot by shot
 
 | # | Shot | Idea on screen |
@@ -40,6 +44,12 @@ Needs Python 3.11 (bpy 4.5 requires it), Node.js 18+, and about 25 GB of free di
 ## Quality gates
 
 `scripts/qa_video.py` checks 1920x1080, 24 fps, H.264 and AAC stereo, exact duration, -16 LUFS integrated loudness, true peak at or below -1 dBFS, no black gaps, and no frozen picture. `scripts/make_audio.py` also checks that narration sits at least 12 dB above music and effects while it speaks.
+
+Final film: 130.22 s, -16.0 LUFS integrated, true peak -1.6 dBFS, narration 14.1 dB above the bed. All nine gates pass.
+
+## Beginner comprehension test
+
+Three fresh-context testers role-played beginners (13-year-old student, 67-year-old skeptic, 30-year-old ESL visual learner) and answered seven questions from the film alone. Each round scored 7 of 7 for every tester, with no misconceptions. Every confusion they reported drove a fix in the next version (v1 to v2 to v3), and each fix was measured where possible. Details, and the questions deliberately left open, are in [qa/COMPREHENSION.md](qa/COMPREHENSION.md).
 
 ## Sources and licenses
 

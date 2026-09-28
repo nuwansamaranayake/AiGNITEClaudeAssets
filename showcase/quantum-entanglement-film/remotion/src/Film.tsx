@@ -50,7 +50,7 @@ const S02: React.FC = () => {
 	const A = trackAt(TR02 as Track, f, 'A');
 	const B = trackAt(TR02 as Track, f, 'B');
 	const o1 = win(t, e.entangled - 0.1, e.blue - 0.35);
-	const o2 = win(t, e.blue - 0.2, e.neither - 0.4);
+	const o2 = win(t, e.blue - 0.2, e.neither - 0.1);
 	const o3 = win(t, e.neither + 0.05, dur('s02_pair') + 1);
 	const mid: [number, number] = [(A[0] + B[0]) / 2, Math.min(A[1], B[1]) - 230];
 	return (
@@ -70,6 +70,9 @@ const S02: React.FC = () => {
 				<Chip c="B" label size={46} />
 				<div style={{fontFamily: FONT, color: INK, fontSize: 30, fontWeight: 300, letterSpacing: 4, textShadow: '0 2px 12px #000'}}>OR</div>
 				<Chip c="G" label size={46} />
+			</div>
+			<div style={{position: 'absolute', left: 0, right: 0, top: 186, textAlign: 'center', fontFamily: FONT, fontSize: 24, color: INK, opacity: 0.9 * win(t, e.gold + 0.6, e.neither - 0.1), textShadow: '0 2px 12px #000'}}>
+				In real labs the “color” is spin, a particle property. Measured, it is only ever up or down.
 			</div>
 			<div style={{position: 'absolute', left: 0, right: 0, top: 96, opacity: o3}}>
 				<Tag title="No color yet" sub="an undecided mix of blue and gold" align="center" panel size={30} color={LAV} />
@@ -123,10 +126,13 @@ const S03: React.FC = () => {
 					<Video name="s03c" startFrom={Math.max(0, cFrom)} />
 					<Bracket a={Ac} b={Bc} text="≈ 100,000 light-years" o={win(t, e.galaxy + 0.5, dur('s03_apart') + 1, 0.4)} off={-80} />
 					<div style={{position: 'absolute', left: 0, right: 0, top: 70, opacity: win(t, e.galaxy - 0.2, dur('s03_apart') + 1, 0.3)}}>
-						<Tag title="Across the galaxy" align="center" panel size={28} />
+						<Tag title="Across the galaxy" sub="so far that light needs 100,000 years to cross" align="center" panel size={28} />
 					</div>
 				</Zoomed>
 			</Sequence>
+			<div style={{position: 'absolute', left: 0, right: 0, top: 892, textAlign: 'center', fontFamily: FONT, fontSize: 22, color: INK, opacity: 0.85 * win(t, e.meter - 0.3, dur('s03_apart') + 1, 0.4), textShadow: '0 2px 12px #000'}}>
+				The glowing line only marks the link. Nothing travels along it.
+			</div>
 		</AbsoluteFill>
 	);
 };
@@ -183,6 +189,7 @@ const S04: React.FC = () => {
 	const replay = win(t, e4.R0, e4.R1 + 0.4, 0.1, 0.3);
 	const flash = t >= e4.R0 - 0.1 && t < e4.R0 + 0.2 ? interpolate(t, [e4.R0 - 0.1, e4.R0, e4.R0 + 0.2], [0, 0.55, 0]) : 0;
 	const always = win(t, e4.always - 0.1, dur('s04_measure') + 1, 0.3);
+	const undecidedO = Math.max(win(t, 0.8, e4.T_C + 0.05, 0.3, 0.12), win(t, e4.R0 + 0.15, rc + 0.05, 0.25, 0.12));
 	return (
 		<AbsoluteFill style={{background: '#000'}}>
 			<OffthreadVideo src={clip('s04a')} muted style={{position: 'absolute', left: 0, top: 0, width: 960, height: 1080}} />
@@ -192,7 +199,14 @@ const S04: React.FC = () => {
 				<Clock x={480} s={s} glow={glow} />
 				<Clock x={1440} s={s} glow={glow} />
 				<Badge text="Same instant" o={same} x={960} y={862} size={20} />
-				<Badge text="▶  Replay · slow motion" o={replay} x={960} y={205} size={18} color={LAV} />
+				<div style={{position: 'absolute', left: 660, width: 600, top: 898, textAlign: 'center', fontFamily: FONT, fontSize: 21, color: INK, opacity: 0.85 * same, textShadow: '0 2px 10px #000'}}>no signal passes between them: the pair acts as one</div>
+				<Badge text="↺  Replay · same moment, slowed down" o={replay} x={960} y={212} size={24} color={LAV} />
+				{[480, 1440].map((x) => (
+					<div key={x} style={{position: 'absolute', left: x, top: 741, transform: 'translateX(-50%)', opacity: undecidedO, display: 'flex', alignItems: 'center', gap: 12, fontFamily: FONT}}>
+						<div style={{width: 34, height: 34, borderRadius: 34, border: `2px solid ${LAV}`, color: LAV, fontSize: 22, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: `0 0 18px ${LAV}66`, background: 'rgba(8,8,20,0.5)'}}>?</div>
+						<div style={{fontSize: 24, fontWeight: 700, letterSpacing: 4, color: LAV, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>UNDECIDED</div>
+					</div>
+				))}
 				<div style={{position: 'absolute', left: 480, top: 735, transform: 'translateX(-50%)', opacity: chipsO}}>
 					<Chip c="B" label size={40} />
 				</div>
@@ -339,7 +353,7 @@ const S06: React.FC = () => {
 			<div style={{position: 'absolute', left: 96, top: 84, opacity: win(t, e.that - 0.1, endT, 0.5)}}>
 				<div style={{width: 64, height: 3, background: GOLD, marginBottom: 18}} />
 				<Tag title="2022 Nobel Prize in Physics" sub="Alain Aspect · John F. Clauser · Anton Zeilinger" size={27} color={GOLD} />
-				<div style={{fontFamily: FONT, color: INK, opacity: 0.75, fontSize: 20, marginTop: 8, textShadow: '0 2px 10px #000'}}>for experiments with entangled photons</div>
+				<div style={{fontFamily: FONT, color: INK, opacity: 0.75, fontSize: 20, marginTop: 8, textShadow: '0 2px 10px #000'}}>for experiments with entangled photons (particles of light)</div>
 			</div>
 		</AbsoluteFill>
 	);
@@ -410,7 +424,7 @@ const S07: React.FC = () => {
 			{/* notes at the speed of light */}
 			<div style={{position: 'absolute', left: np[0], top: np[1], opacity: notesO}}>
 				<div style={{position: 'absolute', left: -14, top: -14, width: 28, height: 28, borderRadius: 28, background: 'radial-gradient(circle, #fff 0%, #cfe3ff 35%, rgba(160,190,255,0) 70%)', boxShadow: '0 0 30px #9fc3ff'}} />
-				<div style={{position: 'absolute', left: 24, top: -54, whiteSpace: 'nowrap'}}>
+				<div style={{position: 'absolute', left: 26, top: 12, whiteSpace: 'nowrap', opacity: 1 - ramp(t, e.arrive_t - 1.0, e.arrive_t - 0.5)}}>
 					<Tag title="Notes, at light speed" sub={`${years.toLocaleString('en-US')} years so far`} size={20} />
 				</div>
 			</div>
@@ -451,6 +465,8 @@ const S08: React.FC = () => {
 				<div style={{fontFamily: FONT, color: INK, fontSize: 30, fontWeight: 400, marginTop: 16, lineHeight: 1.55, textShadow: '0 2px 12px #000'}}>
 					<div style={{opacity: ramp(t, e.computers - 0.9, e.computers - 0.5)}}>Quantum computers</div>
 					<div style={{opacity: ramp(t, e.secure - 0.4, e.secure)}}>Ultra-secure communication</div>
+					<div style={{opacity: 0.8 * ramp(t, e.secure + 0.3, e.secure + 0.8), fontSize: 23, lineHeight: 1.4}}>shared secret keys that reveal any spy listening in</div>
+					<div style={{opacity: 0.8 * ramp(t, e.secure + 0.6, e.secure + 1.1), fontSize: 23, lineHeight: 1.4}}>(the messages themselves still travel normally)</div>
 				</div>
 			</div>
 			<div style={{position: 'absolute', right: 40, bottom: 34, fontFamily: FONT, fontSize: 15, color: INK, opacity: 0.55 * win(t, e.satellite, endT, 0.5)}}>Yin et al., Science 356, 1140 (2017)</div>
@@ -472,7 +488,7 @@ const S09: React.FC = () => {
 				<div style={{fontFamily: FONT, color: INK, textAlign: 'center', transform: `translateY(${-150 + (1 - o) * 12}px)`}}>
 					<div style={{fontSize: 80, letterSpacing: 24, fontWeight: 300, textTransform: 'uppercase', textShadow: '0 0 40px rgba(180,170,255,0.35)'}}>Quantum Entanglement</div>
 					<div style={{width: 120, height: 2, background: LAV, margin: '26px auto', opacity: 0.8}} />
-					<div style={{fontSize: 30, fontWeight: 400, letterSpacing: 1, opacity: 0.9}}>Measure one. Instantly know the other.</div>
+					<div style={{fontSize: 30, fontWeight: 400, letterSpacing: 1, opacity: 0.9}}>Undecided until measured. Linked across any distance.</div>
 				</div>
 			</AbsoluteFill>
 			<div style={{position: 'absolute', left: 0, right: 0, bottom: 150, textAlign: 'center', fontFamily: FONT, color: INK, fontSize: 17, lineHeight: 1.7, opacity: 0.7 * credits}}>

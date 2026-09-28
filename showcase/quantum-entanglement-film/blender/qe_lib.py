@@ -376,16 +376,26 @@ class Orb:
         # colour field: which regions lean blue, which lean gold
         swirl = N.new("ShaderNodeTexNoise")
         swirl.noise_dimensions = "4D"
-        swirl.inputs["Scale"].default_value = 1.9
+        swirl.inputs["Scale"].default_value = float(os.environ.get("QE_SWIRL_SCALE", "6.5"))
         swirl.inputs["Detail"].default_value = 2.0
         L.new(wadd.outputs[0], swirl.inputs["Vector"])
         wofs = mnode("ADD", self.w.outputs[0], vb=3.7)
         L.new(wofs.outputs[0], swirl.inputs["W"])
         fbias = mnode("ADD", swirl.outputs["Fac"], self.bias.outputs[0])
         side = N.new("ShaderNodeMapRange")
-        side.inputs[1].default_value = 0.44
-        side.inputs[2].default_value = 0.56
-        L.new(fbias.outputs[0], side.inputs[0])
+        bands = float(os.environ.get("QE_BANDS", "0"))
+        if bands > 0:
+            # marbled bands: sin(k * noise) alternates blue and gold many times across the
+            # visible face, so an undecided particle always shows both colours
+            kk = mnode("MULTIPLY", fbias.outputs[0], vb=bands)
+            sn = mnode("SINE", kk.outputs[0])
+            side.inputs[1].default_value = -0.3
+            side.inputs[2].default_value = 0.3
+            L.new(sn.outputs[0], side.inputs[0])
+        else:
+            side.inputs[1].default_value = 0.44
+            side.inputs[2].default_value = 0.56
+            L.new(fbias.outputs[0], side.inputs[0])
         cmix = N.new("ShaderNodeMix")
         cmix.data_type = "RGBA"
         L.new(side.outputs[0], cmix.inputs[0])
@@ -532,7 +542,9 @@ class Orb:
         r = self.radius * f
         self.obj.scale = (r, r, r)
 
-    def set(self, t, collapse=0.0, target=None, energy=1.25, flash=0.0, speed=0.5, halo=1.2, flicker=1.0):
+    def set(self, t, collapse=0.0, target=None, energy=1.25, flash=0.0, speed=0.5, halo=1.2, flicker=None):
+        if flicker is None:
+            flicker = float(os.environ.get("QE_FLICKER", "0.0"))
         self.w.outputs[0].default_value = self.seed + t * speed
         self.collapse.outputs[0].default_value = collapse
         self.energy.outputs[0].default_value = energy
